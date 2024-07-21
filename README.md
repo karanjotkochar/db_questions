@@ -6,11 +6,11 @@ This repository contains solutions to LeetCode SQL questions. Each folder is nam
 
 ## Structure
 
-- `q_175`: Contains the question and solution for LeetCode Question 175.
+- `q_175`: Contains the question and solution for LeetCode Question 175. (https://leetcode.com/problemset/database/)
 - `q_176`: Contains the question and solution for LeetCode Question 176.
 - ...
 
-- `sql-50` : Contains the question and solution for LeetCode Top 50 SQL questions (leetcode.com/studyplan/top-sql-50/)
+- `sql-50` : Contains the question and solution for LeetCode Top 50 SQL questions (https://leetcode.com/studyplan/top-sql-50/)
 
 ## Usage
 
