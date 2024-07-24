@@ -1,3 +1,7 @@
+-- https://leetcode.com/problems/employees-earning-more-than-their-managers/
+
+-- Employees earning more than their managers
+
 SELECT emp2.name AS "Employee" 
 FROM Employee AS emp1
 JOIN Employee AS emp2
