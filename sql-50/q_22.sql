@@ -5,9 +5,9 @@
 WITH cte AS (
     SELECT player_id, 
         DATEDIFF(
-            LEAD(event_date) OVER(PARTITION BY player_id ORDER BY event_date) AS nextdate,
+            LEAD(event_date) OVER(PARTITION BY player_id ORDER BY event_date),
             event_date) = 1 AS date_diff,
-        RANK() OVER(PARTITION BY player_id ORDER BY event_date DESC) AS ranking
+        RANK() OVER(PARTITION BY player_id ORDER BY event_date) AS ranking
     FROM Activity
 )
 
