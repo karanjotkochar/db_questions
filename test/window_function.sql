@@ -13,6 +13,8 @@ SELECT
     RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS emp_rank,
     DENSE_RANK() OVER(PARTITION BY Department ORDER BY Salary DESC) AS emp_dense_rank,
     LEAD(id.., 1) OVER(PARTITION BY .. ORDER BY ..),
-    LEAD(id.., 2) OVER(PARTITION BY .. ORDER BY ..)
+    LEAD(id.., 2) OVER(PARTITION BY .. ORDER BY ..),
+    SUM(id) OVER(ORDER BY ..) AS ..,
+    SUM(id) OVER(ORDER BY .. ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS ..
 FROM Employee
 
