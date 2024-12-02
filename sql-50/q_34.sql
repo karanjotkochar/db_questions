@@ -2,27 +2,26 @@
 
 -- Product Price at a Given Date
 
-WITH cte AS (
+WITH cte1 AS (
     SELECT 
         DISTINCT product_id,
-        new_price,
-        change_date,
+        new_price AS price,
         DENSE_RANK() OVER (PARTITION BY product_id ORDER BY change_date DESC) AS ranking
     FROM Products
     WHERE change_date <= '2019-08-16'
 )
 
-SELECT * FROM cte
+SELECT product_id, price 
+FROM cte1
 WHERE ranking = 1
 
 UNION ALL
 
-WITH cte AS (
-    SELECT 
-        DISTINCT product_id,
-        10 AS new_price
+SELECT 
+    DISTINCT product_id, 10 AS price
     FROM Products
-    WHERE product_id NOT IN (SELECT product_id FROM products WHERE change_date <= '2019-08-16')
-)
-
-SELECT * FROM cte
+    WHERE product_id NOT IN (
+                        SELECT product_id 
+                        FROM products 
+                        WHERE change_date <= '2019-08-16'
+                        )
