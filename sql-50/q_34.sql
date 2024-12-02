@@ -14,3 +14,15 @@ WITH cte AS (
 
 SELECT * FROM cte
 WHERE ranking = 1
+
+UNION ALL
+
+WITH cte AS (
+    SELECT 
+        DISTINCT product_id,
+        10 AS new_price
+    FROM Products
+    WHERE product_id NOT IN (SELECT product_id FROM products WHERE change_date <= '2019-08-16')
+)
+
+SELECT * FROM cte
