@@ -4,3 +4,12 @@
 
 SELECT * 
 FROM Insurance
+
+-- final: sum of total investments
+SUM(tiv_2016) 
+
+-- condition 1
+WHERE COUNT(tiv_2015) > 1
+
+-- condition 2
+-- lat, lon not same
