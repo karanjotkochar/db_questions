@@ -2,3 +2,5 @@
 
 -- Investments in 2016
 
+SELECT * 
+FROM Insurance
