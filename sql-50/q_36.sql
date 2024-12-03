@@ -14,6 +14,21 @@ WITH cte AS (
         END AS category
     FROM Accounts
 )
-SELECT category, COUNT (category) AS accounts_count
+
+SELECT 'Low Salary' AS category, COUNT(*) AS accounts_count
 FROM cte
-GROUP BY category
+WHERE category = 'Low Salary'
+
+UNION ALL
+
+SELECT 'Average Salary' AS category, COUNT(*)
+FROM cte
+WHERE category = 'Average Salary'
+
+UNION ALL
+
+SELECT 'High Salary' AS category, COUNT(*)
+FROM cte
+WHERE category = 'High Salary'
+
+-- can be done by 3 expressions and union all
