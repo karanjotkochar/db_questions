@@ -6,10 +6,19 @@ SELECT *
 FROM Insurance
 
 -- final: sum of total investments
-SUM(tiv_2016) 
+ROUND(SUM(tiv_2016), 2) 
 
 -- condition 1
-WHERE COUNT(tiv_2015) > 1
+SELECT tiv_2015
+FROM Insurance
+GROUP BY tiv_2015
+HAVING COUNT(*) > 1
 
 -- condition 2
 -- lat, lon not same
+
+SELECT lat, lon
+FROM Insurance
+GROUP BY lat, lon
+HAVING COUNT(*) = 1
+
